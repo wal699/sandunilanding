@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="description" content="Sanduni Online - Safe chat and call and video Online. Connect instantly with secure messaging and video calls.">
+    <meta name="keywords" content="Sanduni Online, Safe Chat, Call, Video Online, Secure Messaging">
+    <meta name="author" content="Sanduni Online">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sanduni ">
+    <meta property="og:description" content="Safe chat and call and video Online.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/wal699/sanduni/refs/heads/main/sanduni%20og%20image.png">
+
+    <title>Sanduni Online</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Sinhala:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://arableillnesspersonnel.com/67/89/b2/6789b29f7b99e0c9715c95dd6286c816.js"></script>
+
+    <script>
+        const themes = [
+            {
+                name: 'Midnight Purple',
+                vars: {
+                    '--bg-main': '#0F172A',
+                    '--text-main': '#f8fafc',
+                    '--text-sec': '#94a3b8',
+                    '--accent': '#8B5CF6',
+                    '--accent-hover': '#7c3aed',
+                    '--glass-bg': 'rgba(30, 41, 59, 0.7)',
+                    '--glass-border': 'rgba(139, 92, 246, 0.3)',
+                    '--card-bg': 'rgba(255, 255, 255, 0.05)',
+                    '--card-hover': 'rgba(51, 65, 85, 0.8)',
+                    '--blob-1': '#7c3aed', '--blob-2': '#db2777', '--blob-3': '#4f46e5',
+                    '--special-bg': 'rgba(236, 72, 153, 0.1)',
+                    '--special-border': 'rgba(236, 72, 153, 0.5)',
+                    '--special-text': '#ec4899',
+                    '--special-btn': '#db2777'
+                }
+            },
+            {
+                name: 'Creamy Green',
+                vars: {
+                    '--bg-main': '#F7F6D3',
+                    '--text-main': '#1e293b',
+                    '--text-sec': '#64748b',
+                    '--accent': '#65a30d',
+                    '--accent-hover': '#4d7c0f',
+                    '--glass-bg': 'rgba(255, 255, 255, 0.6)',
+                    '--glass-border': 'rgba(184, 219, 128, 0.6)',
+                    '--card-bg': 'rgba(255, 255, 255, 0.6)',
+                    '--card-hover': 'rgba(255, 255, 255, 0.95)',
+                    '--blob-1': '#B8DB80', '--blob-2': '#eab308', '--blob-3': '#84cc16',
+                    '--special-bg': 'rgba(239, 68, 68, 0.05)',
+                    '--special-border': 'rgba(239, 68, 68, 0.3)',
+                    '--special-text': '#ef4444',
+                    '--special-btn': '#dc2626'
+                }
+            },
+            {
+                name: 'Deep Ocean',
+                vars: {
+                    '--bg-main': '#0c4a6e',
+                    '--text-main': '#f0f9ff',
+                    '--text-sec': '#bae6fd',
+                    '--accent': '#38bdf8',
+                    '--accent-hover': '#0ea5e9',
+                    '--glass-bg': 'rgba(12, 74, 110, 0.7)',
+                    '--glass-border': 'rgba(56, 189, 248, 0.3)',
+                    '--card-bg': 'rgba(255, 255, 255, 0.05)',
+                    '--card-hover': 'rgba(8, 51, 68, 0.8)',
+                    '--blob-1': '#0284c7', '--blob-2': '#22d3ee', '--blob-3': '#3b82f6',
+                    '--special-bg': 'rgba(251, 146, 60, 0.1)',
+                    '--special-border': 'rgba(251, 146, 60, 0.5)',
+                    '--special-text': '#fb923c',
+                    '--special-btn': '#f97316'
+                }
+            },
+            {
+                name: 'Sunset Red',
+                vars: {
+                    '--bg-main': '#450a0a',
+                    '--text-main': '#fff1f2',
+                    '--text-sec': '#fecaca',
+                    '--accent': '#fb7185',
+                    '--accent-hover': '#f43f5e',
+                    '--glass-bg': 'rgba(69, 10, 10, 0.7)',
+                    '--glass-border': 'rgba(251, 113, 133, 0.3)',
+                    '--card-bg': 'rgba(255, 255, 255, 0.05)',
+                    '--card-hover': 'rgba(69, 10, 10, 0.8)',
+                    '--blob-1': '#e11d48', '--blob-2': '#fbbf24', '--blob-3': '#be123c',
+                    '--special-bg': 'rgba(250, 204, 21, 0.1)',
+                    '--special-border': 'rgba(250, 204, 21, 0.5)',
+                    '--special-text': '#facc15',
+                    '--special-btn': '#eab308'
+                }
+            },
+            {
+                name: 'Charcoal Teal',
+                vars: {
+                    '--bg-main': '#18181b',
+                    '--text-main': '#f4f4f5',
+                    '--text-sec': '#a1a1aa',
+                    '--accent': '#2dd4bf',
+                    '--accent-hover': '#14b8a6',
+                    '--glass-bg': 'rgba(39, 39, 42, 0.8)',
+                    '--glass-border': 'rgba(45, 212, 191, 0.3)',
+                    '--card-bg': 'rgba(255, 255, 255, 0.05)',
+                    '--card-hover': 'rgba(63, 63, 70, 0.9)',
+                    '--blob-1': '#0d9488', '--blob-2': '#99f6e4', '--blob-3': '#115e59',
+                    '--special-bg': 'rgba(167, 139, 250, 0.1)',
+                    '--special-border': 'rgba(167, 139, 250, 0.5)',
+                    '--special-text': '#a78bfa',
+                    '--special-btn': '#8b5cf6'
+                }
+            }
+        ];
+
+        // Random Selection
+        const selectedTheme = themes[Math.floor(Math.random() * themes.length)];
+        
+        // Apply Variables
+        const root = document.documentElement;
+        for (const [key, value] of Object.entries(selectedTheme.vars)) {
+            root.style.setProperty(key, value);
+        }
+        console.log("Applied Theme:", selectedTheme.name);
+    </script>
+    
+    <style>
+        :root {
+            /* Fallbacks */
+            --bg-main: #0F172A;
+            --text-main: #f8fafc;
+            --text-sec: #94a3b8;
+            --accent: #8B5CF6;
+            --accent-hover: #7c3aed;
+            --glass-bg: rgba(30, 41, 59, 0.6);
+            --glass-border: rgba(139, 92, 246, 0.2);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-hover: rgba(51, 65, 85, 0.8);
+            --blob-1: #7c3aed;
+            --blob-2: #db2777;
+            --blob-3: #4f46e5;
+            --special-bg: rgba(236, 72, 153, 0.1);
+            --special-border: rgba(236, 72, 153, 0.5);
+            --special-text: #ec4899;
+            --special-btn: #db2777;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* --- Theme Utility Classes --- */
+        .theme-text-main { color: var(--text-main); }
+        .theme-text-sec { color: var(--text-sec); }
+        .theme-text-accent { color: var(--accent); }
+        
+        .theme-btn {
+            background-color: var(--accent);
+            color: #fff;
+        }
+        .theme-btn:hover { background-color: var(--accent-hover); }
+
+        /* Background Blobs */
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out alternate;
+            transition: background-color 1s ease;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 300px; height: 300px; background: var(--blob-1); animation-delay: 0s; }
+        .blob-2 { bottom: -10%; right: -10%; width: 300px; height: 300px; background: var(--blob-2); animation-delay: -5s; opacity: 0.3; }
+        .blob-3 { top: 40%; left: 40%; width: 200px; height: 200px; background: var(--blob-3); animation-delay: -2s; transform: translate(-50%, -50%); opacity: 0.3; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(20px, 40px) scale(1.1); }
+        }
+
+        /* Gradient Title */
+        .text-gradient-anim {
+            background: linear-gradient(270deg, var(--accent), var(--blob-2), var(--accent));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 8s ease infinite;
+            filter: drop-shadow(0 0 5px var(--glass-border));
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        /* Profile Image */
+        .profile-ring {
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(45deg, var(--accent), var(--special-btn));
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .profile-img {
+            background-color: var(--card-hover);
+            border: 4px solid var(--bg-main);
+        }
+
+        /* Action Cards */
+        .action-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .action-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 20px -5px var(--glass-border);
+        }
+        .action-card:active {
+            transform: scale(0.98);
+        }
+
+        /* Special Card (Watch) */
+        .special-card {
+            background: var(--special-bg);
+            border: 1px solid var(--special-border);
+        }
+        .special-card:hover {
+            filter: brightness(1.2);
+            border-color: var(--special-text);
+        }
+        .special-icon-box {
+            border-color: var(--special-text);
+        }
+        .special-title { color: var(--special-text); }
+        .special-desc { color: var(--special-text); opacity: 0.8; }
+        .special-btn {
+            background-color: var(--special-btn);
+            color: #fff;
+            box-shadow: 0 0 15px var(--special-border);
+        }
+        .special-btn:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 0 25px var(--special-border);
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+
+        /* Icon Styling */
+        .icon-box {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .group:hover .icon-box {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--accent);
+            transform: scale(1.1) rotate(5deg);
+        }
+        .icon-box svg {
+            color: var(--accent);
+        }
+        
+        /* Dynamic text highlighting with intense pulse */
+        .highlight-text {
+            color: #ffffff !important;
+            background: linear-gradient(90deg, #ef4444, #f97316) !important;
+            padding: 4px 10px !important;
+            border-radius: 12px !important;
+            font-weight: 800 !important;
+            font-size: 11px !important;
+            letter-spacing: 0.5px !important;
+            opacity: 1 !important;
+            display: inline-block !important;
+            margin-top: 6px !important;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4) !important;
+            animation: pulse-alert 0.8s infinite alternate !important;
+        }
+
+        @keyframes pulse-alert {
+            0% { transform: scale(1); box-shadow: 0 0 5px rgba(239, 68, 68, 0.4); }
+            100% { transform: scale(1.08); box-shadow: 0 0 15px rgba(239, 68, 68, 0.9); }
+        }
+    </style>
+</head>
+<body class="h-[100dvh] w-full flex items-center justify-center p-2 sm:p-4 relative overflow-hidden">
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="glass-card w-[98%] max-w-[400px] h-full max-h-[750px] sm:h-auto rounded-[24px] sm:rounded-[32px] p-4 sm:p-8 relative flex flex-col fade-in-up">
+        
+        <!-- Header Profile Section -->
+        <div class="flex flex-col items-center justify-center mb-4 sm:mb-6 mt-1 flex-shrink-0">
+            <div class="profile-ring mb-2 sm:mb-3 fade-in-up delay-100">
+                <!-- Dynamic Image Avatar that matches theme config -->
+                <div class="profile-img w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden flex items-center justify-center bg-gray-200">
+                    <img id="main-profile-avatar" src="" alt="Profile" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <h1 id="profile-name" class="text-2xl sm:text-3xl font-black mb-1 text-gradient-anim tracking-tight fade-in-up delay-200 text-center">Sanduni Online</h1>
+            <p class="theme-text-sec text-xs sm:text-sm font-medium flex items-center gap-2 fade-in-up delay-200">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                Active Now
+            </p>
+        </div>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-2 gap-2 sm:gap-4 flex-1 content-center">
+
+            <!-- Item 1: Call (Tile) -->
+            <div onclick="handleAction('call')" data-type="call" class="action-card rounded-2xl py-3 px-2 sm:py-6 sm:px-4 flex flex-col items-center justify-center text-center gap-1 sm:gap-2 group cursor-pointer fade-in-up delay-300">
+                <div class="icon-box w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
+                        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <span class="theme-text-main font-bold text-[14px] sm:text-lg leading-tight">කෝල්</span>
+                    <span class="theme-text-sec text-[9px] sm:text-[10px] uppercase tracking-wide opacity-70 mt-0.5 text-center leading-tight subtext-element" data-original-text="කරන්න">කරන්න</span>
+                </div>
+            </div>
+
+            <!-- Item 2: Chat (Tile) -->
+            <div onclick="handleAction('chat')" data-type="chat" class="action-card rounded-2xl py-3 px-2 sm:py-6 sm:px-4 flex flex-col items-center justify-center text-center gap-1 sm:gap-2 group cursor-pointer fade-in-up delay-300">
+                <div class="icon-box w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
+                        <path fill-rule="evenodd" d="M4.804 21.644A6.707 6.707 0 006 21.75a6.721 6.721 0 003.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 01-.814 1.686.75.75 0 00.44 1.223zM8.25 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM10.875 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875-1.125a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <span class="theme-text-main font-bold text-[14px] sm:text-lg leading-tight">මැසේජ්</span>
+                    <span class="theme-text-sec text-[9px] sm:text-[10px] uppercase tracking-wide opacity-70 mt-0.5 text-center leading-tight subtext-element" data-original-text="කරන්න">කරන්න</span>
+                </div>
+            </div>
+
+            <!-- Item 3: Video (Wide) -->
+            <div onclick="handleAction('video')" data-type="video" class="col-span-2 action-card rounded-2xl p-3 sm:p-4 flex items-center justify-between group cursor-pointer fade-in-up delay-400">
+                <div class="flex items-center gap-3 flex-1 min-w-0">
+                    <div class="icon-box w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-sm shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
+                            <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col text-left min-w-0">
+                        <h3 class="theme-text-main font-bold text-[15px] sm:text-lg truncate">වීඩියෝ කෝල්</h3>
+                        <p class="theme-text-sec text-[10px] sm:text-xs font-light truncate subtext-element" data-original-text="අර විදියට තමයි">අර විදියට තමයි</p>
+                    </div>
+                </div>
+                <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-[var(--accent)] flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-text-accent">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Item 4: Watch (Special Wide) -->
+            <div onclick="handleAction('watch')" data-type="watch" class="col-span-2 action-card special-card rounded-2xl p-3 sm:p-4 flex items-center justify-between group cursor-pointer fade-in-up delay-400">
+                <div class="flex items-center gap-3 flex-1 min-w-0">
+                    <div class="special-icon-box w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-slate-800 flex items-center justify-center border shadow-sm group-hover:bg-slate-700 transition-colors shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="special-title w-5 h-5 sm:w-7 sm:h-7 transition-transform group-hover:scale-110 duration-300">
+                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                            <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col text-left min-w-0">
+                        <h3 class="special-title font-black text-[15px] sm:text-xl truncate">වැල </h3>
+                        <p class="special-desc text-[10px] sm:text-xs font-medium truncate subtext-element" data-original-text="වීඩියෝ">වීඩියෝ</p>
+                    </div>
+                </div>
+                <button class="special-btn font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full text-[10px] sm:text-xs transition-all transform group-hover:scale-105 shrink-0 whitespace-nowrap">
+                    WATCH
+                </button>
+            </div>
+
+        </div>
+
+        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-[var(--text-sec)]/20 text-center fade-in-up delay-400 flex-shrink-0">
+            <p class="theme-text-sec text-[10px] uppercase tracking-widest opacity-60">Sanduni online • </p>
+            
+            <!-- Pagination Controls -->
+            <div class="flex justify-center items-center gap-2 mt-3 sm:mt-4">
+                <a href="?page=1" class="page-link w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-[11px] sm:text-xs font-bold transition-all border border-[var(--glass-border)] hover:bg-[var(--accent)] hover:text-white">1</a>
+                <a href="?page=2" class="page-link w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-[11px] sm:text-xs font-bold transition-all border border-[var(--glass-border)] hover:bg-[var(--accent)] hover:text-white">2</a>
+                <a href="?page=3" class="page-link w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-[11px] sm:text-xs font-bold transition-all border border-[var(--glass-border)] hover:bg-[var(--accent)] hover:text-white">3</a>
+                <a href="?page=4" class="page-link w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-[11px] sm:text-xs font-bold transition-all border border-[var(--glass-border)] hover:bg-[var(--accent)] hover:text-white">4</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Popup Overlay -->
+    <div id="wa-popup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500 p-4">
+        <div class="w-[92%] max-w-[340px] bg-[#111A20] rounded-[24px] overflow-hidden shadow-2xl transform scale-95 transition-transform duration-500" id="wa-popup-content">
+            <!-- Header -->
+            <div class="bg-[#0F6E54] px-4 py-3 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-[#189D77] flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="flex flex-col flex-1">
+                    <span class="text-white font-bold text-[15px] leading-tight tracking-wide">WhatsApp Message</span>
+                    <span class="text-white/80 text-[13px] font-medium mt-0.5">online</span>
+                </div>
+                <!-- WhatsApp Header Icons (Video & Close) -->
+                <div class="flex items-center gap-2 shrink-0 mr-1">
+                    <button onclick="handleWaPopupAction('video')" class="text-white hover:text-gray-200 transition-colors p-1" title="Video Call">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-[22px] h-[22px]">
+                            <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+                        </svg>
+                    </button>
+                    <button onclick="closeWaPopup()" class="text-white hover:text-gray-200 transition-colors p-1" title="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-[22px] h-[22px]">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Message Body -->
+            <div class="bg-[#202C33] rounded-[16px] p-4 mx-3 mt-4 relative">
+                <p id="wa-profile-name" class="text-[#e9edef] font-bold text-[14px] sm:text-[15px] mb-1.5">සදුනි නිලක්ෂි</p>
+                <p class="text-[#e9edef] text-[13px] sm:text-[14px] leading-snug">මම Meet වෙන්න එන්නද ? ඉක්මනට මැසේජ් එකක් දාන්නකෝ 😘</p>
+                <p class="text-[#8696a0] text-[11px] text-right mt-3 font-medium">just now</p>
+            </div>
+
+            <!-- Action Buttons (Split) -->
+            <div class="flex gap-2 sm:gap-3 mx-3 mb-4 mt-4">
+                <button onclick="handleWaPopupAction('chat')" class="flex-1 bg-[#25d366] text-[#111b21] font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#20bd5a] transition-colors text-[14px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M4.804 21.644A6.707 6.707 0 006 21.75a6.721 6.721 0 003.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 01-.814 1.686.75.75 0 00.44 1.223zM8.25 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM10.875 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875-1.125a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clip-rule="evenodd" />
+                    </svg>
+                    Message
+                </button>
+                <button onclick="handleWaPopupAction('video')" class="flex-1 bg-[#25d366] text-[#111b21] font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#20bd5a] transition-colors text-[14px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+                    </svg>
+                    WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CONFIGURATION: Multi-Page Profile Data
+        const pagesData = {
+            1: {
+                name: "Sanduni Online",
+                waName: "සදුනි නිලක්ෂි",
+                links: {
+                    call: "https://call-me.store/",
+                    chat: "https://tapthelink.cfd/sandunitotharushi",
+                    video: "https://call-me.store/",
+                    watch: "https://tapthelink.cfd/sandunitovideo"
+                }
+            },
+            2: {
+                name: "Kavindi Online",
+                waName: "කාවින්දි අමන්දා",
+                links: {
+                    call: "https://call-me.store/",
+                    chat: "https://tapthelink.cfd/sandunitotharushi", // Update your specific link here
+                    video: "https://call-me.store/",
+                    watch: "https://tapthelink.cfd/sandunitovideo" // Update your specific link here
+                }
+            },
+            3: {
+                name: "Nethmi Online",
+                waName: "නෙත්මි රොෂානි",
+                links: {
+                    call: "https://call-me.store/",
+                    chat: "https://tapthelink.cfd/sandunitotharushi", // Update your specific link here
+                    video: "https://call-me.store/",
+                    watch: "https://tapthelink.cfd/sandunitovideo" // Update your specific link here
+                }
+            },
+            4: {
+                name: "Piyumi Online",
+                waName: "පියුමි හංසමාලි",
+                links: {
+                    call: "https://call-me.store/",
+                    chat: "https://tapthelink.cfd/sandunitotharushi", // Update your specific link here
+                    video: "https://call-me.store/",
+                    watch: "https://tapthelink.cfd/sandunitovideo" // Update your specific link here
+                }
+            }
+        };
+
+        // Determine current page from URL (e.g., ?page=2)
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentPage = parseInt(urlParams.get('page')) || 1;
+        if (!pagesData[currentPage]) currentPage = 1; // Fallback to page 1 if URL is invalid
+        
+        const currentData = pagesData[currentPage];
+
+        // Initialize Page Content dynamically based on URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const profileNameEl = document.getElementById('profile-name');
+            if (profileNameEl) profileNameEl.innerText = currentData.name;
+            
+            const waProfileNameEl = document.getElementById('wa-profile-name');
+            if (waProfileNameEl) waProfileNameEl.innerText = currentData.waName;
+
+            // Update Pagination Button Styles safely to prevent Invalid URL errors in iframes
+            document.querySelectorAll('.page-link').forEach(link => {
+                const href = link.getAttribute('href');
+                const linkPage = parseInt(new URLSearchParams(href.replace('?', '')).get('page'));
+                
+                if (linkPage === currentPage) {
+                    link.classList.add('bg-[var(--accent)]', 'text-white', 'scale-110', 'shadow-md');
+                } else {
+                    link.classList.add('theme-text-main');
+                }
+            });
+        });
+
+        // AD SEQUENCE CONFIGURATION
+        const adUrls = {
+            1: "https://tapthelink.cfd/sandunionlineadstera",
+            2: "https://tapthelink.cfd/sandunionlineadstera",
+            3: "https://tapthelink.cfd/sandunionlineadstera",
+            4: "https://tapthelink.cfd/sandunionlineadstera"
+        };
+
+        function handleAction(type) {
+            // Fetch the URL based on the current page context
+            const targetUrl = currentData.links[type];
+            
+            if (targetUrl) {
+                console.log(`Action triggered: ${type} on Page ${currentPage}`);
+                
+                // Visual feedback (Card bounce effect)
+                const card = document.querySelector(`.action-card[data-type="${type}"]`);
+                if(card) {
+                    card.style.transform = "scale(0.95)";
+                    setTimeout(() => { card.style.transform = ""; }, 100);
+                }
+
+                if (targetUrl !== "#") {
+                    // Match the ad to the current page number (fallback to Ad 4 if something goes wrong)
+                    const currentAd = adUrls[currentPage] || adUrls[4];
+
+                    if (currentPage < 4) {
+                        // FOR PAGES 1, 2, and 3: 
+                        // Open the NEXT page (?page=2, ?page=3, etc.) in a NEW tab
+                        window.open('?page=' + (currentPage + 1), '_blank');
+                        
+                        // Redirect the CURRENT tab to the corresponding Ad for this page
+                        window.location.href = currentAd;
+                    } else {
+                        // LAST PAGE (Page 4):
+                        // Open the final TARGET URL (e.g., call-me.store) in a NEW tab
+                        window.open(targetUrl, '_blank');
+                        
+                        // Redirect the CURRENT tab to Ad 4
+                        window.location.href = currentAd;
+                    }
+                }
+            }
+        }
+
+        // --- WhatsApp Popup Logic ---
+        setTimeout(() => {
+            const popup = document.getElementById('wa-popup');
+            const content = document.getElementById('wa-popup-content');
+            if (popup && content) {
+                popup.classList.remove('opacity-0', 'pointer-events-none');
+                popup.classList.add('opacity-100', 'pointer-events-auto');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }
+        }, 5000); // Trigger after 5 seconds
+
+        function closeWaPopup() {
+            const popup = document.getElementById('wa-popup');
+            const content = document.getElementById('wa-popup-content');
+            if (popup && content) {
+                popup.classList.remove('opacity-100', 'pointer-events-auto');
+                popup.classList.add('opacity-0', 'pointer-events-none');
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+            }
+        }
+
+        function handleWaPopupAction(actionType) {
+            closeWaPopup(); // Hide visually
+            handleAction(actionType); // Trigger config action logic
+        }
+    </script>
+
+    <script>
+        // AVATAR CONFIGURATION
+        const AVATAR_BASE_URL = "https://call-me.store/Deletekrnnaepa/";
+        const TOTAL_IMAGES = 10; // Assuming you have image names starting from 1 up to 10
+
+        // Helper function to get a random avatar URL
+        function getRandomAvatar() {
+            const imageNumber = Math.floor(Math.random() * TOTAL_IMAGES) + 1;
+            return `${AVATAR_BASE_URL}${imageNumber}.jpg`;
+        }
+
+        const sanduniAvatar = getRandomAvatar();
+        
+        // SET MAIN PROFILE AVATAR
+        const mainProfileAvatar = document.getElementById('main-profile-avatar');
+        if (mainProfileAvatar) {
+            mainProfileAvatar.src = sanduniAvatar;
+        }
+    </script>
+     <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4981247,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4981247&101" alt="website stat" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+</html>
